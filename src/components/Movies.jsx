@@ -4,7 +4,9 @@ function ListOfMovies ({ movies }) {
       {
         movies.map(movie => (
           <li key={movie.id}>
-            <h3>{movie.title} (<span />{movie.year})</h3>
+            <div className='row'>
+              <h3>{movie.title} <span className='year'>( {movie.year} )</span></h3>
+            </div>
             <img src={movie.poster} alt={movie.title} />
           </li>
 
@@ -21,7 +23,6 @@ function MoviesWithoutResults () {
 }
 
 export function Movies ({ movies }) {
-  console.log(movies)
   const hasMovies = movies?.length > 0
   return (
     hasMovies

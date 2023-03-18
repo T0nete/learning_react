@@ -11,11 +11,25 @@ form {
   align-items: center;
   display: flex;
   justify-content: center;
+  gap: 10px;
 }
 
+img {
+  border-radius: 5%;
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+ul {
+  list-style-type: none;
+}
 .page {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.year {
+  font-size: 0.5em;
+  font-weight: lighter;
 }
