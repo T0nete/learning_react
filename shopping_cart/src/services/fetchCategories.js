@@ -1,4 +1,3 @@
-import categoriesData from '../mocks/categoriesResposne.json'
 const CATEGORIES_RUTE = 'https://api.escuelajs.co/api/v1/categories'
 
 export const getCategories = async () => {
