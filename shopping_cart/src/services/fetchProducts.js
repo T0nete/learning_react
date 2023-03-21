@@ -1,5 +1,3 @@
-import mockProducts from '../mocks/productsResposne.json'
-
 const CATEGORIES_RUTE = 'https://api.escuelajs.co/api/v1/products'
 
 export const getAllProducts = async () => {
@@ -11,7 +9,8 @@ export const getAllProducts = async () => {
     title: product.title,
     description: product.description,
     image: product.images[0],
-    category: product.category
+    category: product.category.name,
+    price: product.price
   }))
 
   return data

@@ -274,24 +274,6 @@
     }
     },
     {
-    "id": 30,
-    "title": "Licensed Concrete  chair",
-    "price": 1050,
-    "description": "Boston's most advanced compression wear technology increases muscle oxygenation, stabilizes active muscles",
-    "images": [
-    "Bars3.svg"
-    ],
-    "creationAt": "2023-03-21T03:12:39.000Z",
-    "updatedAt": "2023-03-21T14:51:17.000Z",
-    "category": {
-    "id": 4,
-    "name": "Zapatinho",
-    "image": "https://api.lorem.space/image/shoes?w=640&h=480&r=1644",
-    "creationAt": "2023-03-21T03:12:39.000Z",
-    "updatedAt": "2023-03-21T08:21:15.000Z"
-    }
-    },
-    {
     "id": 31,
     "title": "Bespoke Bronze Bacon",
     "price": 880,

@@ -30,5 +30,10 @@ h1 {
 }
 
 .productCard img {
-  
+  border-radius: 16px;
+}
+
+.filters {
+  display: flex;
+  justify-content: space-between;
 }
