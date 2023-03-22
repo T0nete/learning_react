@@ -10,6 +10,7 @@ export const useProducts = () => {
     try {
       setProductsLoading(true)
       getAllProducts().then(setProducts)
+      console.log(products)
     } catch (e) {
       setProductsError(e.message)
     } finally {

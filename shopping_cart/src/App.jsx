@@ -10,20 +10,18 @@ function App () {
   const { products, productsError, productsLoading } = useProducts()
 
   const [filters, setFilters] = useState({
-    category: 'Clothes',
+    category: 'all',
     minPrice: 0
   })
-
-  console.log(JSON.stringify(categories))
 
   const filterProducts = (products) => {
     return products.filter(product => {
       return (
         product.price >= filters.minPrice &&
-        (
-          filters.category === 'all' ||
-          filters.category === product.category
-        )
+            (
+              filters.category === 'all' ||
+              filters.category === product.category
+            )
       )
     })
   }
@@ -33,7 +31,6 @@ function App () {
   return (
     <div className='bodyContent'>
       <h1>Shopping Cart</h1>
-      {console.log(categories)}
       <Filters categories={categories} />
       {productsLoading && <p>Loading....</p>}
       <ProductList productList={fitleredProducts} />

@@ -27,13 +27,23 @@ h1 {
   background-color: #223f58;
   padding: 0 16px 16px 16px;
   box-shadow: 6px 6px 6px 6px rgba(0, 0, 0, 0.3);
+  align-self: normal;
 }
 
-.productCard img {
+.productCard > img {
   border-radius: 16px;
+  margin-top: auto;
+  aspect-ratio: 3/4;
 }
 
 .filters {
   display: flex;
+  align-items: center;
   justify-content: space-between;
+}
+
+.filters > div {
+  display: flex;
+  align-items: center;
+  gap: 16px;
 }

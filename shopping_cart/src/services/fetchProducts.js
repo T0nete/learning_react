@@ -1,4 +1,5 @@
-const CATEGORIES_RUTE = 'https://api.escuelajs.co/api/v1/products'
+// const CATEGORIES_RUTE = 'https://api.escuelajs.co/api/v1/products'
+const CATEGORIES_RUTE = 'https://fakestoreapi.com/products'
 
 export const getAllProducts = async () => {
   const response = await fetch(CATEGORIES_RUTE)
@@ -8,8 +9,8 @@ export const getAllProducts = async () => {
     id: product.id,
     title: product.title,
     description: product.description,
-    image: product.images[0],
-    category: product.category.name,
+    image: product.image,
+    category: product.category,
     price: product.price
   }))
 
