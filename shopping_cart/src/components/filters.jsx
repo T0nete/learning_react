@@ -1,4 +1,12 @@
+import { useState } from 'react'
+
 export function Filters ({ categories }) {
+  const [minPrice, setMinPrice] = useState(0)
+
+  const handleChangeMinPrice = (event) => {
+    setMinPrice(event.target.value)
+  }
+
   return (
     <section className='filters'>
       <div>
@@ -8,8 +16,10 @@ export function Filters ({ categories }) {
           id='price'
           min='0'
           max='10000'
+          onChange={handleChangeMinPrice}
         />
       </div>
+      <span>${minPrice}</span>
       <div>
         <label htmlFor='category'>Category</label>
         <select id='category'>
