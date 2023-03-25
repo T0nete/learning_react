@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import { Filters } from './components/filters'
+import { Header } from './components/header'
 import { ProductList } from './components/productsList'
 import { useCategories } from './hooks/useCategories'
 import { useProducts } from './hooks/useProducts'
@@ -30,8 +31,7 @@ function App () {
 
   return (
     <div className='bodyContent'>
-      <h1>Shopping Cart</h1>
-      <Filters categories={categories} />
+      <Header categories={categories} changeFilters={setFilters} />
       {productsLoading && <p>Loading....</p>}
       <ProductList productList={fitleredProducts} />
       {productsError && <p>Error</p>}
