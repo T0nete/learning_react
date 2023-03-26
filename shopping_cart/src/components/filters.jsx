@@ -1,4 +1,4 @@
-import { useState, useId, useContext } from 'react'
+import { useId, useContext } from 'react'
 import { FiltersContext } from '../contexts/filtres'
 
 export function Filters ({ categories }) {

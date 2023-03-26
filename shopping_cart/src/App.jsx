@@ -1,6 +1,8 @@
 import './App.css'
-import { Header } from './components/header'
-import { Products } from './components/products'
+import { Cart } from './components/Cart'
+import { Header } from './components/Header'
+import { Products } from './components/Products'
+import { CartProvider } from './contexts/cart'
 import { useFilteres } from './hooks/useFilters'
 import { useProducts } from './hooks/useProducts'
 
@@ -11,14 +13,17 @@ function App () {
   const fitleredProducts = filterProducts(products)
 
   return (
-    <div className='bodyContent'>
-      <Header categories={categories} />
-      <Products
-        products={fitleredProducts}
-        productsLoading={productsLoading}
-        productsError={productsError}
-      />
-    </div>
+    <CartProvider>
+      <div className='bodyContent'>
+        <Header categories={categories} />
+        <Products
+          products={fitleredProducts}
+          productsLoading={productsLoading}
+          productsError={productsError}
+        />
+        <Cart />
+      </div>
+    </CartProvider>
   )
 }
 

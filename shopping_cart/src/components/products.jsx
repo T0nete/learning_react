@@ -1,4 +1,4 @@
-import { ProductList } from './productsList'
+import { ProductList } from './ProductsList'
 
 export function Products ({ products, productsLoading, productsError }) {
   return (
