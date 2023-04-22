@@ -38,6 +38,17 @@ function reducer (state: State, action: typeAction) {
     }
   }
 
+  if (type === 'SET_FROM_TEXT') {
+    const loading = action.payload !== ''
+
+    return {
+      ...state,
+      loading,
+      fromText: action.payload,
+      result: ''
+    }
+  }
+
   if (type === 'SET_RESULT') {
     return {
       ...state,
@@ -70,7 +81,12 @@ export function useStore () {
   const setToLanguage = (payload: Language) => {
     dispatch({ type: 'SET_TO_LANGUAGE', payload })
   }
-  const setResult = (payload: Language) => {
+
+  const setFromText = (payload: string) => {
+    dispatch({ type: 'SET_FROM_TEXT', payload })
+  }
+
+  const setResult = (payload: string) => {
     dispatch({ type: 'SET_RESULT', payload })
   }
 
@@ -83,6 +99,7 @@ export function useStore () {
     interChangeLanguages,
     setFromLanguage,
     setToLanguage,
+    setFromText,
     setResult
   }
 }

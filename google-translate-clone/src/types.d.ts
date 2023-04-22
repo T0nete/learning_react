@@ -16,6 +16,7 @@ export type typeAction =
     | { type: 'INTERCHANGE_LANGUAGES' }
     | { type: 'SET_FROM_LANGUAGE', payload: FromLanguage }
     | { type: 'SET_TO_LANGUAGE', payload: Language }
+    | { type: 'SET_FROM_TEXT', payload: string }
     | { type: 'SET_RESULT', payload: string }
 
 export enum SectionType {

@@ -7,7 +7,7 @@ export function ProductList ({ productList }) {
   function checkProductInCart (products, product) {
     return cart.some(item => item.id === product.id)
   }
-  
+
   return (
     <ul className='productList'>
       {
@@ -22,10 +22,10 @@ export function ProductList ({ productList }) {
                   !checkProductInCart(product)
                     ? <button onClick={() => addToCart(product)}>
                       Add
-                    </button>
+                      </button>
                     : <button onClick={() => removeFromCart(product)}>
                       Delete
-                    </button>
+                      </button>
                }
 
              </li>
