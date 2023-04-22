@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { useCart } from '../hooks/useCart'
 
 export function ProductList ({ productList }) {
@@ -6,7 +7,7 @@ export function ProductList ({ productList }) {
   function checkProductInCart (products, product) {
     return cart.some(item => item.id === product.id)
   }
-
+  
   return (
     <ul className='productList'>
       {

@@ -7,17 +7,18 @@ export const CART_ACTION_TYPES = {
   CLEAR_CART: 'CLEAR_CART'
 }
 
-export function cartReducer (state, action) {
+export function cartReducer(state, action) {
   const { type: actionType, payload: actionPayload } = action
 
   switch (actionType) {
     case CART_ACTION_TYPES.CHECK_PRODUCT_IN_CART: {
-      const { id } = actionPayload
+      console.log(actionPayload)
       console.log(state)
+      const { id } = actionPayload
       return state.some(item => item.id === id)
     }
 
-    case CART_ACTION_TYPES.ADD_TO_CART : {
+    case CART_ACTION_TYPES.ADD_TO_CART: {
       const { id } = actionPayload
       const productInCartIndex = state.findIndex(item => item.id === id)
 
@@ -30,7 +31,7 @@ export function cartReducer (state, action) {
       return [
         ...state,
         {
-          ...state,
+          ...actionPayload,
           quantity: 1
         }
       ]
