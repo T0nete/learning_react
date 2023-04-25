@@ -1,8 +1,9 @@
 import { useReducer } from 'react'
-import { type typeAction, type State, type Language } from '../types'
+import { type typeAction, type State, type Language, type FromLanguage } from '../types'
+import { AUTO_LANGUAGE } from '../constatns'
 
 const initialState: State = {
-  fromLang: 'en',
+  fromLang: 'auto',
   toLang: 'es',
   fromText: '',
   result: '',
@@ -13,6 +14,7 @@ function reducer (state: State, action: typeAction) {
   const { type } = action
 
   if (type === 'INTERCHANGE_LANGUAGES') {
+    if (state.fromLang === AUTO_LANGUAGE) return state
     return {
       ...state,
       fromLang: state.toLang,
@@ -33,6 +35,17 @@ function reducer (state: State, action: typeAction) {
     return {
       ...state,
       toLang: action.payload
+    }
+  }
+
+  if (type === 'SET_FROM_TEXT') {
+    const loading = action.payload !== ''
+
+    return {
+      ...state,
+      loading,
+      fromText: action.payload,
+      result: ''
     }
   }
 
@@ -61,14 +74,19 @@ export function useStore () {
     dispatch({ type: 'INTERCHANGE_LANGUAGES' })
   }
 
-  const setFromLanguage = (payload: Language) => {
+  const setFromLanguage = (payload: FromLanguage) => {
     dispatch({ type: 'SET_FROM_LANGUAGE', payload })
   }
 
   const setToLanguage = (payload: Language) => {
     dispatch({ type: 'SET_TO_LANGUAGE', payload })
   }
-  const setResult = (payload: Language) => {
+
+  const setFromText = (payload: string) => {
+    dispatch({ type: 'SET_FROM_TEXT', payload })
+  }
+
+  const setResult = (payload: string) => {
     dispatch({ type: 'SET_RESULT', payload })
   }
 
@@ -81,6 +99,7 @@ export function useStore () {
     interChangeLanguages,
     setFromLanguage,
     setToLanguage,
+    setFromText,
     setResult
   }
 }
